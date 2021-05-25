@@ -7,7 +7,9 @@ target '42Events' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'Alamofire', '~> 5.2'
   pod 'Kingfisher', '~> 6.0'
-
+  pod 'RxSwift', '6.2.0'
+  pod 'RxCocoa', '6.2.0'
+  
   target '42EventsTests' do
     inherit! :search_paths
     # Pods for testing

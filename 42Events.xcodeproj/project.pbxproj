@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		46376C8C0C5BF0CD4C7D4410 /* Pods_42Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D137343DBEE5927D26B579 /* Pods_42Events.framework */; };
 		5F8E9E6D265D4EA8006AC0CE /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E6C265D4EA8006AC0CE /* BaseVC.swift */; };
+		5F8E9E7C265D5383006AC0CE /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E75265D5383006AC0CE /* ViewType.swift */; };
+		5F8E9E7E265D5383006AC0CE /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E77265D5383006AC0CE /* Layoutable.swift */; };
+		5F8E9E80265D5383006AC0CE /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E79265D5383006AC0CE /* Bindable.swift */; };
+		5F8E9E82265D5383006AC0CE /* DisposeBagHaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E7B265D5383006AC0CE /* DisposeBagHaving.swift */; };
 		5FD2C511265D4B4C00D350CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C510265D4B4C00D350CF /* AppDelegate.swift */; };
 		5FD2C515265D4B4C00D350CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C514265D4B4C00D350CF /* MainViewController.swift */; };
 		5FD2C518265D4B4C00D350CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C516265D4B4C00D350CF /* Main.storyboard */; };
@@ -43,6 +47,10 @@
 		42ED103B3F51C2E1EBDA63CB /* Pods-42Events-42EventsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Events-42EventsUITests.debug.xcconfig"; path = "Target Support Files/Pods-42Events-42EventsUITests/Pods-42Events-42EventsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E40BF92FFEEA5167AAFB348 /* Pods-42Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Events.debug.xcconfig"; path = "Target Support Files/Pods-42Events/Pods-42Events.debug.xcconfig"; sourceTree = "<group>"; };
 		5F8E9E6C265D4EA8006AC0CE /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		5F8E9E75265D5383006AC0CE /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
+		5F8E9E77265D5383006AC0CE /* Layoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layoutable.swift; sourceTree = "<group>"; };
+		5F8E9E79265D5383006AC0CE /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		5F8E9E7B265D5383006AC0CE /* DisposeBagHaving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBagHaving.swift; sourceTree = "<group>"; };
 		5FD2C50D265D4B4C00D350CF /* 42Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 42Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD2C510265D4B4C00D350CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FD2C514265D4B4C00D350CF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +110,9 @@
 		5F8E9E68265D4E54006AC0CE /* App */ = {
 			isa = PBXGroup;
 			children = (
-				5FD2C514265D4B4C00D350CF /* MainViewController.swift */,
+				5F8E9E72265D5364006AC0CE /* Views */,
+				5F8E9E71265D5358006AC0CE /* Presenters */,
+				5F8E9E70265D5341006AC0CE /* Controllers */,
 				5F8E9E6C265D4EA8006AC0CE /* BaseVC.swift */,
 			);
 			path = App;
@@ -133,6 +143,8 @@
 		5F8E9E6E265D4EFE006AC0CE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5F8E9E83265D54F1006AC0CE /* CommonViews */,
+				5F8E9E73265D5383006AC0CE /* Protocol */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -142,6 +154,54 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		5F8E9E70265D5341006AC0CE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FD2C514265D4B4C00D350CF /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F8E9E71265D5358006AC0CE /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		5F8E9E72265D5364006AC0CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5F8E9E73265D5383006AC0CE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5F8E9E74265D5383006AC0CE /* Core */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5F8E9E74265D5383006AC0CE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5F8E9E75265D5383006AC0CE /* ViewType.swift */,
+				5F8E9E77265D5383006AC0CE /* Layoutable.swift */,
+				5F8E9E79265D5383006AC0CE /* Bindable.swift */,
+				5F8E9E7B265D5383006AC0CE /* DisposeBagHaving.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5F8E9E83265D54F1006AC0CE /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
 		5FD2C504265D4B4C00D350CF = {
@@ -463,7 +523,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FD2C515265D4B4C00D350CF /* MainViewController.swift in Sources */,
+				5F8E9E80265D5383006AC0CE /* Bindable.swift in Sources */,
 				5F8E9E6D265D4EA8006AC0CE /* BaseVC.swift in Sources */,
+				5F8E9E7C265D5383006AC0CE /* ViewType.swift in Sources */,
+				5F8E9E7E265D5383006AC0CE /* Layoutable.swift in Sources */,
+				5F8E9E82265D5383006AC0CE /* DisposeBagHaving.swift in Sources */,
 				5FD2C511265D4B4C00D350CF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
