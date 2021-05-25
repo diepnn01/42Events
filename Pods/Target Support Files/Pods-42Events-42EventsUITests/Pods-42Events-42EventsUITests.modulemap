@@ -1,0 +1,6 @@
+framework module Pods_42Events_42EventsUITests {
+  umbrella header "Pods-42Events-42EventsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
