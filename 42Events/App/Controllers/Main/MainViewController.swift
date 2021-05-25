@@ -11,9 +11,18 @@ class MainViewController: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     
+    lazy var headerview: MainHeaderView = {
+        let view = MainHeaderView(shouldSetup: true)
+        let screenWidth = UIScreen.main.bounds.width
+        let height = screenWidth * 9/16
+        view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: height)
+        return view
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.tableHeaderView
+        tableView.tableHeaderView = headerview
     }
 }
 
