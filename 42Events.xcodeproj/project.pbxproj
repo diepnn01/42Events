@@ -14,6 +14,8 @@
 		5F8E9E80265D5383006AC0CE /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E79265D5383006AC0CE /* Bindable.swift */; };
 		5F8E9E82265D5383006AC0CE /* DisposeBagHaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E7B265D5383006AC0CE /* DisposeBagHaving.swift */; };
 		5F8E9E85265D5718006AC0CE /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E84265D5718006AC0CE /* MainHeaderView.swift */; };
+		5F8E9E8A265E970C006AC0CE /* HeaderCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E89265E970C006AC0CE /* HeaderCarouselCell.swift */; };
+		5F8E9E90265E9FE2006AC0CE /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E8F265E9FE2006AC0CE /* NSObject+Ext.swift */; };
 		5FD2C511265D4B4C00D350CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C510265D4B4C00D350CF /* AppDelegate.swift */; };
 		5FD2C515265D4B4C00D350CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C514265D4B4C00D350CF /* MainViewController.swift */; };
 		5FD2C518265D4B4C00D350CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C516265D4B4C00D350CF /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		5F8E9E79265D5383006AC0CE /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		5F8E9E7B265D5383006AC0CE /* DisposeBagHaving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBagHaving.swift; sourceTree = "<group>"; };
 		5F8E9E84265D5718006AC0CE /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
+		5F8E9E89265E970C006AC0CE /* HeaderCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCarouselCell.swift; sourceTree = "<group>"; };
+		5F8E9E8F265E9FE2006AC0CE /* NSObject+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
 		5FD2C50D265D4B4C00D350CF /* 42Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 42Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD2C510265D4B4C00D350CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FD2C514265D4B4C00D350CF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 		5F8E9E6E265D4EFE006AC0CE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5F8E9E8E265E99E1006AC0CE /* Extension */,
 				5F8E9E83265D54F1006AC0CE /* CommonViews */,
 				5F8E9E73265D5383006AC0CE /* Protocol */,
 			);
@@ -203,6 +208,7 @@
 		5F8E9E83265D54F1006AC0CE /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				5F8E9E88265E96A2006AC0CE /* HeaderCarouselCell */,
 				5F8E9E84265D5718006AC0CE /* MainHeaderView.swift */,
 			);
 			path = CommonViews;
@@ -221,6 +227,22 @@
 			children = (
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		5F8E9E88265E96A2006AC0CE /* HeaderCarouselCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F8E9E89265E970C006AC0CE /* HeaderCarouselCell.swift */,
+			);
+			path = HeaderCarouselCell;
+			sourceTree = "<group>";
+		};
+		5F8E9E8E265E99E1006AC0CE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5F8E9E8F265E9FE2006AC0CE /* NSObject+Ext.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		5FD2C504265D4B4C00D350CF = {
@@ -542,6 +564,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F8E9E85265D5718006AC0CE /* MainHeaderView.swift in Sources */,
+				5F8E9E90265E9FE2006AC0CE /* NSObject+Ext.swift in Sources */,
+				5F8E9E8A265E970C006AC0CE /* HeaderCarouselCell.swift in Sources */,
 				5FD2C515265D4B4C00D350CF /* MainViewController.swift in Sources */,
 				5F8E9E80265D5383006AC0CE /* Bindable.swift in Sources */,
 				5F8E9E6D265D4EA8006AC0CE /* BaseVC.swift in Sources */,
