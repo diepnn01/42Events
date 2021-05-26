@@ -55,7 +55,7 @@ class EventCategoryCell: UITableViewCell, BaseViewType {
     lazy private var labelTitle: UILabel = {
         let label = UILabel()
         label.text = "Event"
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.metropolisBold(ofSize: 16)
         return label
     }()
     
