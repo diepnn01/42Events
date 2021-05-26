@@ -22,21 +22,26 @@ class MainViewController: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
         tableView.tableHeaderView = headerview
+        tableView.registerCell(of: EventCategoryCell.self)
     }
 }
 
 extension MainViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueCell(of: EventCategoryCell.self, at: indexPath)
+            return cell
+        }
         return UITableViewCell()
     }
 }

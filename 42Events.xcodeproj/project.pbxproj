@@ -16,6 +16,11 @@
 		5F8E9E85265D5718006AC0CE /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E84265D5718006AC0CE /* MainHeaderView.swift */; };
 		5F8E9E8A265E970C006AC0CE /* HeaderCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E89265E970C006AC0CE /* HeaderCarouselCell.swift */; };
 		5F8E9E90265E9FE2006AC0CE /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E8F265E9FE2006AC0CE /* NSObject+Ext.swift */; };
+		5F8E9E92265EA39B006AC0CE /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E91265EA39B006AC0CE /* UITableView+Ext.swift */; };
+		5F8E9E95265EA40C006AC0CE /* EventCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E94265EA40C006AC0CE /* EventCategoryCell.swift */; };
+		5F8E9E97265EA560006AC0CE /* EventCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E96265EA560006AC0CE /* EventCategoryCollectionCell.swift */; };
+		5F8E9E99265EABC4006AC0CE /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E98265EABC4006AC0CE /* UIColor+Ext.swift */; };
+		5F8E9E9B265EABF1006AC0CE /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E9A265EABF1006AC0CE /* String+Ext.swift */; };
 		5FD2C511265D4B4C00D350CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C510265D4B4C00D350CF /* AppDelegate.swift */; };
 		5FD2C515265D4B4C00D350CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C514265D4B4C00D350CF /* MainViewController.swift */; };
 		5FD2C518265D4B4C00D350CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C516265D4B4C00D350CF /* Main.storyboard */; };
@@ -57,6 +62,11 @@
 		5F8E9E84265D5718006AC0CE /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
 		5F8E9E89265E970C006AC0CE /* HeaderCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCarouselCell.swift; sourceTree = "<group>"; };
 		5F8E9E8F265E9FE2006AC0CE /* NSObject+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
+		5F8E9E91265EA39B006AC0CE /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		5F8E9E94265EA40C006AC0CE /* EventCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCategoryCell.swift; sourceTree = "<group>"; };
+		5F8E9E96265EA560006AC0CE /* EventCategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCategoryCollectionCell.swift; sourceTree = "<group>"; };
+		5F8E9E98265EABC4006AC0CE /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		5F8E9E9A265EABF1006AC0CE /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		5FD2C50D265D4B4C00D350CF /* 42Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 42Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD2C510265D4B4C00D350CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FD2C514265D4B4C00D350CF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +227,7 @@
 		5F8E9E86265D5870006AC0CE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5F8E9E93265EA3E0006AC0CE /* Cells */,
 				5FD2C514265D4B4C00D350CF /* MainViewController.swift */,
 			);
 			path = Main;
@@ -240,9 +251,21 @@
 		5F8E9E8E265E99E1006AC0CE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5F8E9E9A265EABF1006AC0CE /* String+Ext.swift */,
+				5F8E9E98265EABC4006AC0CE /* UIColor+Ext.swift */,
+				5F8E9E91265EA39B006AC0CE /* UITableView+Ext.swift */,
 				5F8E9E8F265E9FE2006AC0CE /* NSObject+Ext.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5F8E9E93265EA3E0006AC0CE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5F8E9E94265EA40C006AC0CE /* EventCategoryCell.swift */,
+				5F8E9E96265EA560006AC0CE /* EventCategoryCollectionCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5FD2C504265D4B4C00D350CF = {
@@ -563,6 +586,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F8E9E92265EA39B006AC0CE /* UITableView+Ext.swift in Sources */,
+				5F8E9E99265EABC4006AC0CE /* UIColor+Ext.swift in Sources */,
 				5F8E9E85265D5718006AC0CE /* MainHeaderView.swift in Sources */,
 				5F8E9E90265E9FE2006AC0CE /* NSObject+Ext.swift in Sources */,
 				5F8E9E8A265E970C006AC0CE /* HeaderCarouselCell.swift in Sources */,
@@ -572,6 +597,9 @@
 				5F8E9E7C265D5383006AC0CE /* ViewType.swift in Sources */,
 				5F8E9E7E265D5383006AC0CE /* Layoutable.swift in Sources */,
 				5F8E9E82265D5383006AC0CE /* DisposeBagHaving.swift in Sources */,
+				5F8E9E95265EA40C006AC0CE /* EventCategoryCell.swift in Sources */,
+				5F8E9E9B265EABF1006AC0CE /* String+Ext.swift in Sources */,
+				5F8E9E97265EA560006AC0CE /* EventCategoryCollectionCell.swift in Sources */,
 				5FD2C511265D4B4C00D350CF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
