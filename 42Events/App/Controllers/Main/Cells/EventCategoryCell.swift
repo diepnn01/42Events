@@ -54,8 +54,8 @@ class EventCategoryCell: UITableViewCell, BaseViewType {
     
     lazy private var labelTitle: UILabel = {
         let label = UILabel()
-        label.text = "Event"
-        label.font = UIFont.metropolisBold(ofSize: 16)
+        label.text = "EventCategoryCell.Event".localized
+        label.font = UIFont.metropolisBold(ofSize: 20)
         return label
     }()
     
@@ -63,7 +63,7 @@ class EventCategoryCell: UITableViewCell, BaseViewType {
         let layout = UICollectionViewFlowLayout()
         let screenWidth = UIScreen.main.bounds.width
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 5
+        layout.minimumLineSpacing = 3
         layout.minimumInteritemSpacing = 0
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isPagingEnabled = true
@@ -90,22 +90,22 @@ class EventCategoryCell: UITableViewCell, BaseViewType {
         separatorLine.backgroundColor = UIColor.colorFromHex("#E6E6E6")
         [labelTitle, collectionView, separatorLine].forEach(contentView.addSubview)
         labelTitle.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(13)
+            make.top.equalToSuperview().offset(30)
             make.leading.equalToSuperview().offset(8)
             make.trailing.equalToSuperview().offset(-8)
         }
         
-        let width = (UIScreen.main.bounds.width - 30)/3
+        let width = (UIScreen.main.bounds.width - 12)/3
         collectionView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(8)
-            make.trailing.equalToSuperview().offset(-8)
-            make.bottom.equalToSuperview().offset(-10)
-            make.top.equalTo(labelTitle.snp.bottom).offset(5)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-8)
+            make.top.equalTo(labelTitle.snp.bottom).offset(2)
             make.height.equalTo(width*3/4)
         }
         
         separatorLine.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
+            make.leading.equalToSuperview().offset(8)
+            make.trailing.equalToSuperview().offset(-8)
             make.bottom.equalToSuperview().offset(0)
             make.height.equalTo(1)
         }
@@ -140,8 +140,8 @@ extension EventCategoryCell: UICollectionViewDataSource {
 extension EventCategoryCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenWidth = UIScreen.main.bounds.width
-        let itemSize = CGSize(width: (screenWidth - 30)/3, height: collectionView.frame.height)
+        let screenWidth = collectionView.frame.width
+        let itemSize = CGSize(width: (screenWidth-6)/3, height: collectionView.frame.height)
         return itemSize
     }
 }

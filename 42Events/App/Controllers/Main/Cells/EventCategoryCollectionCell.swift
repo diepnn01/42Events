@@ -28,6 +28,7 @@ class EventCategoryCollectionCell: UICollectionViewCell, BaseViewType {
     
     lazy private var labelTitle: UILabel = {
         let label = UILabel()
+        label.font = UIFont.metropolisBold(ofSize: 14)
         label.textColor = .white
         return label
     }()
@@ -49,10 +50,15 @@ class EventCategoryCollectionCell: UICollectionViewCell, BaseViewType {
             make.bottom.trailing.equalToSuperview().offset(-5)
         }
         imageViewBg.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.leading.equalToSuperview().offset(25)
+            make.trailing.equalToSuperview().offset(25)
+            make.width.height.equalTo(60)
+            make.centerY.equalToSuperview()
         }
         labelTitle.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(8)
+            make.top.equalToSuperview().offset(10)
         }
     }
     
