@@ -54,8 +54,8 @@ class EventCategoryCell: UITableViewCell, BaseViewType {
     
     lazy private var labelTitle: UILabel = {
         let label = UILabel()
-        label.text = "Event"
-        label.font = UIFont.metropolisBold(ofSize: 16)
+        label.text = "EventCategoryCell.Event".localized
+        label.font = UIFont.metropolisBold(ofSize: 20)
         return label
     }()
     
@@ -90,7 +90,7 @@ class EventCategoryCell: UITableViewCell, BaseViewType {
         separatorLine.backgroundColor = UIColor.colorFromHex("#E6E6E6")
         [labelTitle, collectionView, separatorLine].forEach(contentView.addSubview)
         labelTitle.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(16)
+            make.top.equalToSuperview().offset(30)
             make.leading.equalToSuperview().offset(8)
             make.trailing.equalToSuperview().offset(-8)
         }
@@ -99,7 +99,7 @@ class EventCategoryCell: UITableViewCell, BaseViewType {
         collectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().offset(-8)
-            make.top.equalTo(labelTitle.snp.bottom).offset(5)
+            make.top.equalTo(labelTitle.snp.bottom).offset(2)
             make.height.equalTo(width*3/4)
         }
         
