@@ -24,6 +24,17 @@
 		5F8E9E9E265F0C05006AC0CE /* Metropolis-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F8E9E9D265F0C05006AC0CE /* Metropolis-ExtraBold.otf */; };
 		5F8E9EA1265F0C7D006AC0CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F8E9EA3265F0C7D006AC0CE /* Localizable.strings */; };
 		5F8E9EA5265F0C9E006AC0CE /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EA4265F0C9E006AC0CE /* UIFont+Ext.swift */; };
+		5F8E9EA7265FE453006AC0CE /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EA6265FE453006AC0CE /* EventCell.swift */; };
+		5F8E9EAA265FE488006AC0CE /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EA8265FE488006AC0CE /* EventCollectionViewCell.swift */; };
+		5F8E9EAB265FE488006AC0CE /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F8E9EA9265FE488006AC0CE /* EventCollectionViewCell.xib */; };
+		5F8E9EB0265FE914006AC0CE /* Metropolis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F8E9EAC265FE914006AC0CE /* Metropolis-SemiBold.otf */; };
+		5F8E9EB1265FE914006AC0CE /* Metropolis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F8E9EAD265FE914006AC0CE /* Metropolis-Bold.otf */; };
+		5F8E9EB2265FE914006AC0CE /* Metropolis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F8E9EAE265FE914006AC0CE /* Metropolis-Regular.otf */; };
+		5F8E9EB3265FE914006AC0CE /* Metropolis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F8E9EAF265FE914006AC0CE /* Metropolis-Medium.otf */; };
+		5F8E9EB6265FF3A6006AC0CE /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EB4265FF3A6006AC0CE /* TagCollectionViewCell.swift */; };
+		5F8E9EB7265FF3A6006AC0CE /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F8E9EB5265FF3A6006AC0CE /* TagCollectionViewCell.xib */; };
+		5F8E9EBA265FFD60006AC0CE /* EventListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EB9265FFD60006AC0CE /* EventListVC.swift */; };
+		5F8E9EBC265FFE87006AC0CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EBB265FFE87006AC0CE /* Utils.swift */; };
 		5FD2C511265D4B4C00D350CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C510265D4B4C00D350CF /* AppDelegate.swift */; };
 		5FD2C515265D4B4C00D350CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C514265D4B4C00D350CF /* MainViewController.swift */; };
 		5FD2C518265D4B4C00D350CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C516265D4B4C00D350CF /* Main.storyboard */; };
@@ -73,6 +84,17 @@
 		5F8E9E9D265F0C05006AC0CE /* Metropolis-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-ExtraBold.otf"; sourceTree = "<group>"; };
 		5F8E9EA2265F0C7D006AC0CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5F8E9EA4265F0C9E006AC0CE /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
+		5F8E9EA6265FE453006AC0CE /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		5F8E9EA8265FE488006AC0CE /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F8E9EA9265FE488006AC0CE /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
+		5F8E9EAC265FE914006AC0CE /* Metropolis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-SemiBold.otf"; sourceTree = "<group>"; };
+		5F8E9EAD265FE914006AC0CE /* Metropolis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Bold.otf"; sourceTree = "<group>"; };
+		5F8E9EAE265FE914006AC0CE /* Metropolis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Regular.otf"; sourceTree = "<group>"; };
+		5F8E9EAF265FE914006AC0CE /* Metropolis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Medium.otf"; sourceTree = "<group>"; };
+		5F8E9EB4265FF3A6006AC0CE /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F8E9EB5265FF3A6006AC0CE /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		5F8E9EB9265FFD60006AC0CE /* EventListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListVC.swift; sourceTree = "<group>"; };
+		5F8E9EBB265FFE87006AC0CE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5FD2C50D265D4B4C00D350CF /* 42Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 42Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD2C510265D4B4C00D350CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FD2C514265D4B4C00D350CF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +197,7 @@
 		5F8E9E6F265D4F04006AC0CE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5F8E9EBB265FFE87006AC0CE /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -184,6 +207,7 @@
 			children = (
 				5F8E9E87265D5876006AC0CE /* Splash */,
 				5F8E9E86265D5870006AC0CE /* Main */,
+				5F8E9EB8265FFD36006AC0CE /* EventList */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -271,6 +295,11 @@
 			children = (
 				5F8E9E94265EA40C006AC0CE /* EventCategoryCell.swift */,
 				5F8E9E96265EA560006AC0CE /* EventCategoryCollectionCell.swift */,
+				5F8E9EA6265FE453006AC0CE /* EventCell.swift */,
+				5F8E9EA8265FE488006AC0CE /* EventCollectionViewCell.swift */,
+				5F8E9EA9265FE488006AC0CE /* EventCollectionViewCell.xib */,
+				5F8E9EB4265FF3A6006AC0CE /* TagCollectionViewCell.swift */,
+				5F8E9EB5265FF3A6006AC0CE /* TagCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -278,10 +307,22 @@
 		5F8E9E9C265F0BE9006AC0CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F8E9EAD265FE914006AC0CE /* Metropolis-Bold.otf */,
+				5F8E9EAF265FE914006AC0CE /* Metropolis-Medium.otf */,
+				5F8E9EAE265FE914006AC0CE /* Metropolis-Regular.otf */,
+				5F8E9EAC265FE914006AC0CE /* Metropolis-SemiBold.otf */,
 				5F8E9E9D265F0C05006AC0CE /* Metropolis-ExtraBold.otf */,
 				5F8E9EA3265F0C7D006AC0CE /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F8E9EB8265FFD36006AC0CE /* EventList */ = {
+			isa = PBXGroup;
+			children = (
+				5F8E9EB9265FFD60006AC0CE /* EventListVC.swift */,
+			);
+			path = EventList;
 			sourceTree = "<group>";
 		};
 		5FD2C504265D4B4C00D350CF = {
@@ -475,9 +516,15 @@
 			files = (
 				5F8E9EA1265F0C7D006AC0CE /* Localizable.strings in Resources */,
 				5FD2C51D265D4B4E00D350CF /* LaunchScreen.storyboard in Resources */,
+				5F8E9EB0265FE914006AC0CE /* Metropolis-SemiBold.otf in Resources */,
 				5FD2C51A265D4B4E00D350CF /* Assets.xcassets in Resources */,
 				5FD2C518265D4B4C00D350CF /* Main.storyboard in Resources */,
+				5F8E9EB7265FF3A6006AC0CE /* TagCollectionViewCell.xib in Resources */,
+				5F8E9EB2265FE914006AC0CE /* Metropolis-Regular.otf in Resources */,
 				5F8E9E9E265F0C05006AC0CE /* Metropolis-ExtraBold.otf in Resources */,
+				5F8E9EB1265FE914006AC0CE /* Metropolis-Bold.otf in Resources */,
+				5F8E9EB3265FE914006AC0CE /* Metropolis-Medium.otf in Resources */,
+				5F8E9EAB265FE488006AC0CE /* EventCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,17 +657,22 @@
 				5F8E9E85265D5718006AC0CE /* MainHeaderView.swift in Sources */,
 				5F8E9E90265E9FE2006AC0CE /* NSObject+Ext.swift in Sources */,
 				5F8E9E8A265E970C006AC0CE /* HeaderCarouselCell.swift in Sources */,
+				5F8E9EA7265FE453006AC0CE /* EventCell.swift in Sources */,
 				5FD2C515265D4B4C00D350CF /* MainViewController.swift in Sources */,
 				5F8E9E80265D5383006AC0CE /* Bindable.swift in Sources */,
 				5F8E9E6D265D4EA8006AC0CE /* BaseVC.swift in Sources */,
 				5F8E9E7C265D5383006AC0CE /* ViewType.swift in Sources */,
 				5F8E9E7E265D5383006AC0CE /* Layoutable.swift in Sources */,
 				5F8E9E82265D5383006AC0CE /* DisposeBagHaving.swift in Sources */,
+				5F8E9EB6265FF3A6006AC0CE /* TagCollectionViewCell.swift in Sources */,
 				5F8E9E95265EA40C006AC0CE /* EventCategoryCell.swift in Sources */,
+				5F8E9EAA265FE488006AC0CE /* EventCollectionViewCell.swift in Sources */,
 				5F8E9EA5265F0C9E006AC0CE /* UIFont+Ext.swift in Sources */,
 				5F8E9E9B265EABF1006AC0CE /* String+Ext.swift in Sources */,
+				5F8E9EBC265FFE87006AC0CE /* Utils.swift in Sources */,
 				5F8E9E97265EA560006AC0CE /* EventCategoryCollectionCell.swift in Sources */,
 				5FD2C511265D4B4C00D350CF /* AppDelegate.swift in Sources */,
+				5F8E9EBA265FFD60006AC0CE /* EventListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

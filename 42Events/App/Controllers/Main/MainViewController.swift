@@ -11,6 +11,8 @@ class MainViewController: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var sections = ["Starting soon", "Popular", "New Releasees", "Free", "Past Events"]
+    
     lazy var headerview: MainHeaderView = {
         let view = MainHeaderView(shouldSetup: true)
         let screenWidth = UIScreen.main.bounds.width
@@ -28,21 +30,40 @@ class MainViewController: BaseVC {
     private func setupTableView() {
         tableView.tableHeaderView = headerview
         tableView.registerCell(of: EventCategoryCell.self)
+        tableView.registerCell(of: EventCell.self)
+    }
+    
+    private func openListEvent(_ type: EventCategoryType) {
+        let eventsVC = Utils.loadController(from: "Main", of: EventListVC.self)
+        eventsVC.modalPresentationStyle = .fullScreen
+        self.present(eventsVC, animated: true, completion: nil)
     }
 }
 
 extension MainViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return section == 0 ? 1 : sections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             let cell = tableView.dequeueCell(of: EventCategoryCell.self, at: indexPath)
+            cell.onSelectedIndex = { [weak self] index in
+                guard let type = EventCategoryType(rawValue: index) else {
+                    return
+                }
+                self?.openListEvent(type)
+            }
             return cell
         }
-        return UITableViewCell()
+        let cell = tableView.dequeueCell(of: EventCell.self, at: indexPath)
+        cell.title = sections[indexPath.row]
+        return cell
     }
 }
 

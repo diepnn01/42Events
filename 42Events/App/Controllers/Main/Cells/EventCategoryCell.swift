@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import SnapKit
 
-enum EventCategoryType: CaseIterable {
+enum EventCategoryType: Int, CaseIterable {
     case running
     case cycling
     case walking
@@ -51,7 +51,7 @@ enum EventCategoryType: CaseIterable {
 class EventCategoryCell: UITableViewCell, BaseViewType {
 
     var disposeBag = DisposeBag()
-    
+    var onSelectedIndex: ((Int) -> Void)?
     lazy private var labelTitle: UILabel = {
         let label = UILabel()
         label.text = "EventCategoryCell.Event".localized
@@ -111,9 +111,7 @@ class EventCategoryCell: UITableViewCell, BaseViewType {
         }
     }
     
-    func bind() {
-        //
-    }
+    func bind() { }
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -137,7 +135,14 @@ extension EventCategoryCell: UICollectionViewDataSource {
     }
 }
 
-extension EventCategoryCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate{
+extension EventCategoryCell: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        onSelectedIndex?(indexPath.row)
+    }
+}
+
+extension EventCategoryCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = collectionView.frame.width

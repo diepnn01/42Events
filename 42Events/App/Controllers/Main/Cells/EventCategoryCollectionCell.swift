@@ -52,8 +52,8 @@ class EventCategoryCollectionCell: UICollectionViewCell, BaseViewType {
         imageViewBg.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(25)
             make.trailing.equalToSuperview().offset(25)
-            make.width.height.equalTo(60)
-            make.centerY.equalToSuperview()
+            make.top.equalToSuperview().offset(10)
+            make.bottom.equalToSuperview().offset(-10)
         }
         labelTitle.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)

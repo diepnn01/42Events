@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - Localized
 public extension String {
@@ -20,5 +21,25 @@ public extension String {
     func localizedWithFormat(_ arguments: [CVarArg]) -> String {
         let localizedString = String(format: localized, arguments: arguments)
         return localizedString
+    }
+}
+
+extension String {
+    func getWidthString(_ font: UIFont, mHeight: CGFloat, maxWidth: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: maxWidth, height: mHeight)
+        let boundingBox = self.boundingRect(with: constraintRect,
+                                            options: NSStringDrawingOptions.usesLineFragmentOrigin,
+                                            attributes: [.font: font],
+                                            context: nil)
+        return boundingBox.width
+    }
+    
+    func getHeightString(_ font: UIFont, maxHeight: CGFloat, mWidth: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: mWidth, height: maxHeight)
+        let boundingBox = self.boundingRect(with: constraintRect,
+                                            options: NSStringDrawingOptions.usesLineFragmentOrigin,
+                                            attributes: [.font: font],
+                                            context: nil)
+        return boundingBox.height
     }
 }
