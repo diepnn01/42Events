@@ -13,6 +13,12 @@ class MainViewController: BaseVC {
     
     var sections = ["Starting soon", "Popular", "New Releasees", "Free", "Past Events"]
     
+    private lazy var hamburgerButton: UIBarButtonItem = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "ic_hamburger"), for: .normal)
+        return UIBarButtonItem(customView: button)
+    }()
+    
     lazy var headerview: MainHeaderView = {
         let view = MainHeaderView(shouldSetup: true)
         let screenWidth = UIScreen.main.bounds.width
@@ -24,6 +30,8 @@ class MainViewController: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Main.Title".localized
+        navigationItem.rightBarButtonItem = hamburgerButton
         setupTableView()
     }
     
@@ -35,8 +43,8 @@ class MainViewController: BaseVC {
     
     private func openListEvent(_ type: EventCategoryType) {
         let eventsVC = Utils.loadController(from: "Main", of: EventListVC.self)
-        eventsVC.modalPresentationStyle = .fullScreen
-        self.present(eventsVC, animated: true, completion: nil)
+        eventsVC.eventCategory = type
+        self.navigationController?.pushViewController(eventsVC, animated: true)
     }
 }
 

@@ -13,11 +13,11 @@ class TagCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewContainer.layer.cornerRadius = 10
+        viewContainer.layer.cornerRadius = 12
         viewContainer.layer.masksToBounds = true
         viewContainer.layer.borderWidth = 1
         viewContainer.layer.borderColor = UIColor.colorFromHex("#E6E6E6").cgColor
-        labelTitle.textColor = UIColor.colorFromHex("#333")
+        labelTitle.textColor = UIColor.colorFromHex("#333333")
     }
 
     var title: String? {

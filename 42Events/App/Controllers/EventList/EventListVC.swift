@@ -12,9 +12,15 @@ import SnapKit
 class EventListVC: BaseVC {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    var eventCategory: EventCategoryType = .running
+    
+    struct Metrict {
+        static let heightCellWithoutImage: CGFloat = 110
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = eventCategory.title
         collectionView.register(UINib(nibName: EventCollectionViewCell.className,
                                       bundle: nil), forCellWithReuseIdentifier: EventCollectionViewCell.className)
     }
@@ -39,8 +45,10 @@ extension EventListVC: UICollectionViewDataSource {
 extension EventListVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let imageBGHeight = (UIScreen.main.bounds.width) * 9/16
+        let collectionHeight = imageBGHeight + Metrict.heightCellWithoutImage
         return CGSize(width: UIScreen.main.bounds.width,
-                      height: 280)
+                      height: collectionHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

@@ -43,6 +43,10 @@ class EventCell: UITableViewCell, BaseViewType {
         fatalError("init(coder:) has not been implemented")
     }
     
+    struct Metrict {
+        static let heightCellWithoutImage: CGFloat = 110
+    }
+    
     var title: String? {
         didSet {
             labelTitle.text = title
@@ -61,11 +65,12 @@ class EventCell: UITableViewCell, BaseViewType {
             make.top.equalToSuperview().offset(25)
             make.trailing.equalToSuperview().offset(-8)
         }
-        
+        let imageBGHeight = (UIScreen.main.bounds.width) * 9/16
+        let collectionHeight = imageBGHeight + Metrict.heightCellWithoutImage
         collectionView.snp.makeConstraints { make in
             make.leading.bottom.trailing.equalToSuperview()
-            make.top.equalTo(labelTitle.snp.bottom).offset(16)
-            make.height.equalTo(280)
+            make.top.equalTo(labelTitle.snp.bottom).offset(12)
+            make.height.equalTo(collectionHeight)
         }
         
         separatorLine.snp.makeConstraints { make in

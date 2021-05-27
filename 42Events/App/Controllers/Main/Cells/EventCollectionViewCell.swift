@@ -18,9 +18,9 @@ class EventCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        eventImageView.layer.cornerRadius = 12
-        labelEventName.textColor = UIColor.colorFromHex("#333")
-        labelDuration.textColor = UIColor.colorFromHex("#333")
+        eventImageView.layer.cornerRadius = 1
+        labelEventName.textColor = UIColor.colorFromHex("#333333")
+        labelDuration.textColor = UIColor.colorFromHex("#333333")
         labelEventName.text = "[Test] 50 Day Running Challenge - Thailand"
         labelDuration.text = "01 Jan 2021 (23:59) - 29 Jan 2031 (23:59) GMT +8"
         
@@ -59,7 +59,7 @@ extension EventCollectionViewCell: UICollectionViewDelegateFlowLayout {
         if widthTitle > UIScreen.main.bounds.width {
             widthTitle = UIScreen.main.bounds.width - 16
         }
-        return CGSize(width: widthTitle, height: 20)
+        return CGSize(width: widthTitle, height: 25)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

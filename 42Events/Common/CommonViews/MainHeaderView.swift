@@ -36,8 +36,9 @@ class MainHeaderView: UIView, BaseViewType {
     
     lazy private var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
-        pageControl.tintColor = .blue
-        pageControl.currentPage = 2
+        pageControl.currentPage = 0
+        pageControl.pageIndicatorTintColor = UIColor.white
+        pageControl.currentPageIndicatorTintColor = UIColor.red
         pageControl.numberOfPages = banners.count
         return pageControl
     }()
