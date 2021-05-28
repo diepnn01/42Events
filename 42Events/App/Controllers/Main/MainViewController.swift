@@ -13,12 +13,6 @@ class MainViewController: BaseVC {
     
     var sections = ["Starting soon", "Popular", "New Releasees", "Free", "Past Events"]
     
-    private lazy var hamburgerButton: UIBarButtonItem = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "ic_hamburger"), for: .normal)
-        return UIBarButtonItem(customView: button)
-    }()
-    
     lazy var headerview: MainHeaderView = {
         let view = MainHeaderView(shouldSetup: true)
         let screenWidth = UIScreen.main.bounds.width
@@ -30,8 +24,8 @@ class MainViewController: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSideMenu()
         title = "Main.Title".localized
-        navigationItem.rightBarButtonItem = hamburgerButton
         setupTableView()
     }
     
