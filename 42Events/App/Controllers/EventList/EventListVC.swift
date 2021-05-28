@@ -20,6 +20,7 @@ class EventListVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSideMenu()
         title = eventCategory.title
         collectionView.register(UINib(nibName: EventCollectionViewCell.className,
                                       bundle: nil), forCellWithReuseIdentifier: EventCollectionViewCell.className)

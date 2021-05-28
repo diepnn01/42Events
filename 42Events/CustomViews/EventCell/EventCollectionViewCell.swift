@@ -13,11 +13,16 @@ class EventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelDuration: UILabel!
     @IBOutlet weak var labelEventName: UILabel!
     @IBOutlet weak var eventImageView: UIImageView!
-    
+    @IBOutlet weak var freeMedalEngraving: UIView!
+
     var listItems = ["Running", "11 Joined", "Half marathon 21.907km", "Half marathon 21.907km", "Half marathon 21.907km"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        freeMedalEngraving.backgroundColor = UIColor.colorFromHex("#eb3d49")
+        freeMedalEngraving.layer.cornerRadius = 12
+        freeMedalEngraving.layer.masksToBounds = true
+        
         eventImageView.layer.cornerRadius = 1
         labelEventName.textColor = UIColor.colorFromHex("#333333")
         labelDuration.textColor = UIColor.colorFromHex("#333333")
