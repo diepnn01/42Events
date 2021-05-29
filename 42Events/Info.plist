@@ -20,6 +20,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Metropolis-ExtraBold.otf</string>
+		<string>Metropolis-Bold.otf</string>
+		<string>Metropolis-Medium.otf</string>
+		<string>Metropolis-Regular.otf</string>
+		<string>Metropolis-SemiBold.otf</string>
+	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

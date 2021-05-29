@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  42Events
+
+  Created by Diep Nguyen on 27/05/2021.
+  
+*/
+
+"Main.Title" = "Events";
+"EventCategoryCell.Event" = "Events";
+
+"SideMenuItemType.Login" = "Login";
+"SideMenuItemType.Signup" = "Sign up";
+"SideMenuItemType.GuidesAndFAQ" = "Guides and FAQ";
+"SideMenuItemType.ContactUs" = "Contact us";
+"SideMenuItemType.Language" = "Language";
+
+"RaceCategory.StartingSoon" = "Starting Soon";
+"RaceCategory.Popular" = "Popular";
+"RaceCategory.NewRelease" = "New Release";
+"RaceCategory.Free" = "Free";
+"RaceCategory.PastEvents" = "Past Events";
