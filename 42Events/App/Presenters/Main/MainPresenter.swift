@@ -31,3 +31,23 @@ class MainPresenter {
         }
     }
 }
+
+extension MainPresenter {
+    
+    func numberOfRows(at section: Int) -> Int {
+        return section == 0 ? 1 : RaceCategory.allCases.count
+    }
+    
+    func events(at indexPath: IndexPath) -> [Race] {
+        guard let raceType = RaceCategory(rawValue: indexPath.row) else {
+            return []
+        }
+        switch raceType {
+        case .startSoon: return raceEventCollection.startingSoon
+        case .popular: return raceEventCollection.popular
+        case .newRelease: return raceEventCollection.newRelease
+        case .free: return raceEventCollection.free
+        case .past: return raceEventCollection.past
+        }
+    }
+}

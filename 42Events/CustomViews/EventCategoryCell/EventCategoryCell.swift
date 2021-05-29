@@ -46,6 +46,17 @@ enum EventCategoryType: Int, CaseIterable {
             return "https://virtual-race-submissions.s3-ap-southeast-1.amazonaws.com/images/category-walk-png-67w10102019-110311"
         }
     }
+    
+    var paramFilter: String {
+        switch self {
+        case .running:
+            return "running"
+        case .cycling:
+            return "cycling"
+        case .walking:
+            return "walking"
+        }
+    }
 }
 
 class EventCategoryCell: UITableViewCell, BaseViewType {
@@ -126,10 +137,7 @@ extension EventCategoryCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCategoryCollectionCell.className,
-                                                            for: indexPath) as? EventCategoryCollectionCell else {
-            return UICollectionViewCell()
-        }
+        let cell = collectionView.dequeueCell(of: EventCategoryCollectionCell.self, at: indexPath)
         cell.type = EventCategoryType.allCases[indexPath.row]
         return cell
     }

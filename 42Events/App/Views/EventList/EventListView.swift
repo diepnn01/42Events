@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol EventListView {
+    func filterCompleted()
+    func filterError()
+}

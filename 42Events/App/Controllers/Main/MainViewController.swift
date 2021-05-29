@@ -7,30 +7,19 @@
 
 import UIKit
 
-enum RaceCategory: Int, CaseIterable {
-    case startSoon
-    case popular
-    case newRelease
-    case free
-    case past
-    
-    var title: String? {
-        switch self {
-        case .startSoon: return "Starting Soon"
-        case .popular: return "Popular"
-        case .newRelease: return "New Release"
-        case .free: return "Free"
-        case .past: return "Past Events"
-        }
-    }
-}
-
 class MainViewController: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: MainPresenter!
-    lazy var headerview: MainHeaderView = {
+    private lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.tintColor = UIColor.colorFromHex("#EC3E49")
+        control.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
+        return control
+    }()
+    
+    private lazy var headerview: MainHeaderView = {
         let view = MainHeaderView(shouldSetup: true)
         let screenWidth = UIScreen.main.bounds.width
         let height = screenWidth * 9/16
@@ -42,8 +31,7 @@ class MainViewController: BaseVC {
         super.viewDidLoad()
         addSideMenu()
         setupPresenter()
-        title = "Main.Title".localized
-        setupTableView()
+        setupUI()
         presenter.getRaceEvents()
     }
     
@@ -52,8 +40,10 @@ class MainViewController: BaseVC {
         presenter.attachView(view: self)
     }
     
-    private func setupTableView() {
+    private func setupUI() {
+        title = "Main.Title".localized
         tableView.tableHeaderView = headerview
+        tableView.refreshControl = refreshControl
         tableView.registerCell(of: EventCategoryCell.self)
         tableView.registerCell(of: EventCell.self)
     }
@@ -61,7 +51,11 @@ class MainViewController: BaseVC {
     private func openListEvent(_ type: EventCategoryType) {
         let eventsVC = Utils.loadController(from: "Main", of: EventListVC.self)
         eventsVC.eventCategory = type
-        self.navigationController?.pushViewController(eventsVC, animated: true)
+        navigationController?.pushViewController(eventsVC, animated: true)
+    }
+    
+    @objc private func refreshData() {
+        presenter.getRaceEvents()
     }
 }
 
@@ -80,16 +74,14 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : RaceCategory.allCases.count
+        return presenter.numberOfRows(at: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueCell(of: EventCategoryCell.self, at: indexPath)
             cell.onSelectedIndex = { [weak self] index in
-                guard let type = EventCategoryType(rawValue: index) else {
-                    return
-                }
+                guard let type = EventCategoryType(rawValue: index) else { return }
                 self?.openListEvent(type)
             }
             return cell
@@ -97,19 +89,7 @@ extension MainViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueCell(of: EventCell.self, at: indexPath)
         cell.title = RaceCategory.allCases[indexPath.row].title
-        let raceType = RaceCategory(rawValue: indexPath.row) ?? .startSoon
-        switch raceType {
-        case .startSoon:
-            cell.reloadData(presenter.raceEventCollection.startingSoon)
-        case .popular:
-            cell.reloadData(presenter.raceEventCollection.popular)
-        case .newRelease:
-            cell.reloadData(presenter.raceEventCollection.newRelease)
-        case .free:
-            cell.reloadData(presenter.raceEventCollection.newRelease)
-        case .past:
-            cell.reloadData(presenter.raceEventCollection.past)
-        }
+        cell.reloadData(presenter.events(at: indexPath))
         return cell
     }
 }

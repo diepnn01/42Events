@@ -66,6 +66,7 @@ class MainHeaderView: UIView, BaseViewType {
     }
     
     private func resetTimer() {
+        guard banners.count > 1 else { return }
         timer = .scheduledTimer(timeInterval: 3, target: self,
                                 selector: #selector(scrollToNextPage),
                                 userInfo: nil,
@@ -90,10 +91,7 @@ extension MainHeaderView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCarouselCell.className,
-                                                            for: indexPath) as? HeaderCarouselCell else {
-            return UICollectionViewCell()
-        }
+        let cell = collectionView.dequeueCell(of: HeaderCarouselCell.self, at: indexPath)
         cell.imageUrl = banners[indexPath.row]
         return cell
     }

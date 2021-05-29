@@ -14,31 +14,77 @@ class EventListVC: BaseVC {
     @IBOutlet weak var collectionView: UICollectionView!
     var eventCategory: EventCategoryType = .running
     
+    private lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.tintColor = UIColor.colorFromHex("#EC3E49")
+        control.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
+        return control
+    }()
+    
     struct Metrict {
         static let heightCellWithoutImage: CGFloat = 110
     }
     
+    private var presenter: EventListPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSideMenu()
+        setupPresenter()
+        setupUI()
+        getData()
+    }
+    
+    //MARK: Private methods
+    private func setupPresenter() {
+        presenter = EventListPresenter()
+        presenter.attachView(self)
+    }
+    
+    private func setupUI() {
         title = eventCategory.title
         collectionView.register(UINib(nibName: EventCollectionViewCell.className,
                                       bundle: nil), forCellWithReuseIdentifier: EventCollectionViewCell.className)
+        collectionView.refreshControl = refreshControl
+    }
+    
+    private func getData() {
+        presenter.filter(sportType: eventCategory)
+    }
+    
+    @objc private func refreshData() {
+        presenter.page = 0
+        presenter.filter(sportType: eventCategory)
     }
 }
 
+/*
+ * implement EventListView
+ */
+extension EventListVC: EventListView {
+    
+    func filterCompleted() {
+        refreshControl.endRefreshing()
+        collectionView.reloadData()
+    }
+    
+    func filterError() {
+        //TODO: handle error here
+    }
+}
+
+/*
+ * UICollectionViewDataSource and Delegate
+ */
 extension EventListVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return presenter.numberOfItem(at: section)
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.className,
-                                                            for: indexPath) as? EventCollectionViewCell else {
-            return UICollectionViewCell()
-        }
+        let cell = collectionView.dequeueCell(of: EventCollectionViewCell.self, at: indexPath)
+        cell.race = presenter.item(at: indexPath)
         return cell
     }
 }
