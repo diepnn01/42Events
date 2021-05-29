@@ -16,6 +16,14 @@
 		5F15AFF92662237300398C6C /* RaceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15AFF82662237300398C6C /* RaceCategory.swift */; };
 		5F15B0012662297700398C6C /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15B0002662297700398C6C /* UICollectionView+Ext.swift */; };
 		5F15B0242662341E00398C6C /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15B0232662341E00398C6C /* UIViewController+Ext.swift */; };
+		5F15B04E26624E7F00398C6C /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15B04D26624E7F00398C6C /* AppColor.swift */; };
+		5F15B05B266253AB00398C6C /* EventMedalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15B059266253AB00398C6C /* EventMedalTableViewCell.swift */; };
+		5F15B05C266253AB00398C6C /* EventMedalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F15B05A266253AB00398C6C /* EventMedalTableViewCell.xib */; };
+		5F15B062266253FA00398C6C /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15B060266253FA00398C6C /* EventTableViewCell.swift */; };
+		5F15B063266253FA00398C6C /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F15B061266253FA00398C6C /* EventTableViewCell.xib */; };
+		5F15B06C266254FC00398C6C /* EventContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15B06B266254FC00398C6C /* EventContentView.swift */; };
+		5F15B0712662567200398C6C /* EventContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F15B0702662567200398C6C /* EventContentView.xib */; };
+		5F4976792662572500A8F0FB /* BaseCustomXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4976762662572500A8F0FB /* BaseCustomXibView.swift */; };
 		5F8E9E6D265D4EA8006AC0CE /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E6C265D4EA8006AC0CE /* BaseVC.swift */; };
 		5F8E9E7C265D5383006AC0CE /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E75265D5383006AC0CE /* ViewType.swift */; };
 		5F8E9E7E265D5383006AC0CE /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E77265D5383006AC0CE /* Layoutable.swift */; };
@@ -101,6 +109,14 @@
 		5F15AFF82662237300398C6C /* RaceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCategory.swift; sourceTree = "<group>"; };
 		5F15B0002662297700398C6C /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		5F15B0232662341E00398C6C /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		5F15B04D26624E7F00398C6C /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		5F15B059266253AB00398C6C /* EventMedalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMedalTableViewCell.swift; sourceTree = "<group>"; };
+		5F15B05A266253AB00398C6C /* EventMedalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventMedalTableViewCell.xib; sourceTree = "<group>"; };
+		5F15B060266253FA00398C6C /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		5F15B061266253FA00398C6C /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		5F15B06B266254FC00398C6C /* EventContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventContentView.swift; sourceTree = "<group>"; };
+		5F15B0702662567200398C6C /* EventContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventContentView.xib; sourceTree = "<group>"; };
+		5F4976762662572500A8F0FB /* BaseCustomXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCustomXibView.swift; sourceTree = "<group>"; };
 		5F8E9E6C265D4EA8006AC0CE /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		5F8E9E75265D5383006AC0CE /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		5F8E9E77265D5383006AC0CE /* Layoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layoutable.swift; sourceTree = "<group>"; };
@@ -218,6 +234,23 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		5F15B06A266254DD00398C6C /* EventContentView */ = {
+			isa = PBXGroup;
+			children = (
+				5F15B06B266254FC00398C6C /* EventContentView.swift */,
+				5F15B0702662567200398C6C /* EventContentView.xib */,
+			);
+			path = EventContentView;
+			sourceTree = "<group>";
+		};
+		5F4976752662572500A8F0FB /* BaseCustom */ = {
+			isa = PBXGroup;
+			children = (
+				5F4976762662572500A8F0FB /* BaseCustomXibView.swift */,
+			);
+			path = BaseCustom;
+			sourceTree = "<group>";
+		};
 		5F8E9E67265D4E4A006AC0CE /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				5F8E9EBB265FFE87006AC0CE /* Utils.swift */,
+				5F15B04D26624E7F00398C6C /* AppColor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -336,6 +370,8 @@
 		5F8E9E83265D54F1006AC0CE /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				5F4976752662572500A8F0FB /* BaseCustom */,
+				5F15B06A266254DD00398C6C /* EventContentView */,
 				F38942232660EC6500DC41EC /* SideMenu */,
 				F38941E02660E70500DC41EC /* EventCategoryCell */,
 				F38941DF2660E6F100DC41EC /* EventCell */,
@@ -516,6 +552,10 @@
 				5F8E9EA6265FE453006AC0CE /* EventCell.swift */,
 				5F8E9EA8265FE488006AC0CE /* EventCollectionViewCell.swift */,
 				5F8E9EA9265FE488006AC0CE /* EventCollectionViewCell.xib */,
+				5F15B059266253AB00398C6C /* EventMedalTableViewCell.swift */,
+				5F15B05A266253AB00398C6C /* EventMedalTableViewCell.xib */,
+				5F15B060266253FA00398C6C /* EventTableViewCell.swift */,
+				5F15B061266253FA00398C6C /* EventTableViewCell.xib */,
 			);
 			path = EventCell;
 			sourceTree = "<group>";
@@ -691,11 +731,14 @@
 				5FD2C51A265D4B4E00D350CF /* Assets.xcassets in Resources */,
 				5FD2C518265D4B4C00D350CF /* Main.storyboard in Resources */,
 				5F8E9EB7265FF3A6006AC0CE /* TagCollectionViewCell.xib in Resources */,
+				5F15B063266253FA00398C6C /* EventTableViewCell.xib in Resources */,
 				5F8E9EB2265FE914006AC0CE /* Metropolis-Regular.otf in Resources */,
+				5F15B05C266253AB00398C6C /* EventMedalTableViewCell.xib in Resources */,
 				5F8E9E9E265F0C05006AC0CE /* Metropolis-ExtraBold.otf in Resources */,
 				5F8E9EB1265FE914006AC0CE /* Metropolis-Bold.otf in Resources */,
 				5F8E9EB3265FE914006AC0CE /* Metropolis-Medium.otf in Resources */,
 				5F8E9EAB265FE488006AC0CE /* EventCollectionViewCell.xib in Resources */,
+				5F15B0712662567200398C6C /* EventContentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,12 +874,16 @@
 				5F8E9EC526613739006AC0CE /* Route.swift in Sources */,
 				5F8E9E90265E9FE2006AC0CE /* NSObject+Ext.swift in Sources */,
 				5F8E9EC626613739006AC0CE /* Router.swift in Sources */,
+				5F15B062266253FA00398C6C /* EventTableViewCell.swift in Sources */,
 				5F8E9EC726613739006AC0CE /* RouterUrlConvertible.swift in Sources */,
 				5F8E9E8A265E970C006AC0CE /* HeaderCarouselCell.swift in Sources */,
+				5F15B06C266254FC00398C6C /* EventContentView.swift in Sources */,
+				5F15B04E26624E7F00398C6C /* AppColor.swift in Sources */,
 				5F8E9EA7265FE453006AC0CE /* EventCell.swift in Sources */,
 				5F8E9ECC26613D76006AC0CE /* RaceFilterRouter.swift in Sources */,
 				F38942252660EC7B00DC41EC /* SideMenuCell.swift in Sources */,
 				5F15AFE82661F19E00398C6C /* RaceFilterService.swift in Sources */,
+				5F4976792662572500A8F0FB /* BaseCustomXibView.swift in Sources */,
 				5FD2C515265D4B4C00D350CF /* MainViewController.swift in Sources */,
 				5F8E9E80265D5383006AC0CE /* Bindable.swift in Sources */,
 				5F8E9E6D265D4EA8006AC0CE /* BaseVC.swift in Sources */,
@@ -865,6 +912,7 @@
 				5F8E9EBC265FFE87006AC0CE /* Utils.swift in Sources */,
 				5F8E9ECE26614281006AC0CE /* Race.swift in Sources */,
 				5F8E9E97265EA560006AC0CE /* EventCategoryCollectionCell.swift in Sources */,
+				5F15B05B266253AB00398C6C /* EventMedalTableViewCell.swift in Sources */,
 				5FD2C511265D4B4C00D350CF /* AppDelegate.swift in Sources */,
 				5F15AFE22661EEE200398C6C /* FilterRaceCollection.swift in Sources */,
 				5F15AFF92662237300398C6C /* RaceCategory.swift in Sources */,

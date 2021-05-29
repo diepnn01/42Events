@@ -20,6 +20,10 @@ class EventListPresenter {
     //MARK: Public properties
     var page = 0
     
+    var totalEvent: Int {
+        return datasource.count
+    }
+    
     //MARK: Inititalization
     init() {
         service = RaceFilterService()

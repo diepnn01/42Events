@@ -79,6 +79,7 @@ class SideMenuCell: UITableViewCell, BaseViewType {
 
         labelValue.snp.makeConstraints { (make) in
             make.trailing.equalTo(iconArrowRight.snp.leading).offset(-8)
+            make.leading.greaterThanOrEqualTo(labelTitle.snp.trailing).offset(8)
             make.centerY.equalToSuperview()
         }
 

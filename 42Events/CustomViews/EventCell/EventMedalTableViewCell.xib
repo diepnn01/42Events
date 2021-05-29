@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Metropolis-ExtraBold.otf">
+            <string>Metropolis-ExtraBold</string>
+        </array>
+        <array key="Metropolis-Medium.otf">
+            <string>Metropolis-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="140" id="KGk-i7-Jjw" customClass="EventMedalTableViewCell" customModule="_2Events" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ap-DU-s0U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zj2-dW-Wnc">
+                                <rect key="frame" x="8" y="11" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="BZs-8E-xYy"/>
+                                    <constraint firstAttribute="width" secondItem="Zj2-dW-Wnc" secondAttribute="height" multiplier="1:1" id="DQ8-GC-AiR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTb-Fa-Fh9">
+                                <rect key="frame" x="98" y="11" width="214" height="14"/>
+                                <fontDescription key="fontDescription" name="Metropolis-ExtraBold" family="Metropolis" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUu-Sc-zma">
+                                <rect key="frame" x="98" y="33" width="212" height="12"/>
+                                <fontDescription key="fontDescription" name="Metropolis-Medium" family="Metropolis" pointSize="12"/>
+                                <color key="textColor" red="0.72549019607843135" green="0.72549019607843135" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ho6-CF-u4h">
+                                <rect key="frame" x="98" y="53" width="214" height="12"/>
+                                <fontDescription key="fontDescription" name="Metropolis-Medium" family="Metropolis" pointSize="12"/>
+                                <color key="textColor" red="0.72549019607843135" green="0.72549019607843135" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9e-go-0eN">
+                                <rect key="frame" x="98" y="81" width="212" height="12"/>
+                                <fontDescription key="fontDescription" name="Metropolis-Medium" family="Metropolis" pointSize="12"/>
+                                <color key="textColor" red="0.72549019609999998" green="0.72549019609999998" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wUu-Sc-zma" secondAttribute="trailing" constant="10" id="7iu-20-ZHw"/>
+                            <constraint firstItem="f9e-go-0eN" firstAttribute="top" secondItem="Ho6-CF-u4h" secondAttribute="bottom" constant="16" id="CXd-We-EaC"/>
+                            <constraint firstItem="wUu-Sc-zma" firstAttribute="leading" secondItem="Zj2-dW-Wnc" secondAttribute="trailing" constant="10" id="Nbq-ff-7Fb"/>
+                            <constraint firstAttribute="trailing" secondItem="f9e-go-0eN" secondAttribute="trailing" constant="10" id="RU1-UB-v1p"/>
+                            <constraint firstItem="Zj2-dW-Wnc" firstAttribute="leading" secondItem="9Ap-DU-s0U" secondAttribute="leading" constant="8" id="SyT-v0-5fI"/>
+                            <constraint firstItem="Zj2-dW-Wnc" firstAttribute="top" secondItem="9Ap-DU-s0U" secondAttribute="top" constant="11" id="UnU-Ik-ZHe"/>
+                            <constraint firstItem="cTb-Fa-Fh9" firstAttribute="top" secondItem="9Ap-DU-s0U" secondAttribute="top" constant="11" id="VJO-Tw-rZs"/>
+                            <constraint firstItem="Ho6-CF-u4h" firstAttribute="leading" secondItem="Zj2-dW-Wnc" secondAttribute="trailing" constant="10" id="dqo-Sq-P3n"/>
+                            <constraint firstItem="wUu-Sc-zma" firstAttribute="top" secondItem="cTb-Fa-Fh9" secondAttribute="bottom" constant="8" symbolic="YES" id="ejs-q2-kQM"/>
+                            <constraint firstAttribute="trailing" secondItem="Ho6-CF-u4h" secondAttribute="trailing" constant="8" id="fdt-GP-LXu"/>
+                            <constraint firstItem="f9e-go-0eN" firstAttribute="leading" secondItem="Zj2-dW-Wnc" secondAttribute="trailing" constant="10" id="hTM-0g-buj"/>
+                            <constraint firstItem="cTb-Fa-Fh9" firstAttribute="leading" secondItem="Zj2-dW-Wnc" secondAttribute="trailing" constant="10" id="hsg-sG-8M1"/>
+                            <constraint firstItem="Ho6-CF-u4h" firstAttribute="top" secondItem="wUu-Sc-zma" secondAttribute="bottom" constant="8" symbolic="YES" id="wBV-Xh-4em"/>
+                            <constraint firstAttribute="trailing" secondItem="cTb-Fa-Fh9" secondAttribute="trailing" constant="8" id="xbH-lZ-ya6"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="f9e-go-0eN" secondAttribute="bottom" constant="10" id="yrA-9D-cyZ"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Zj2-dW-Wnc" secondAttribute="bottom" constant="10" id="zqC-MI-DOu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9Ap-DU-s0U" secondAttribute="trailing" id="F17-e1-cHC"/>
+                    <constraint firstItem="9Ap-DU-s0U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="MpP-mk-rpF"/>
+                    <constraint firstAttribute="bottom" secondItem="9Ap-DU-s0U" secondAttribute="bottom" id="SCO-rc-8gN"/>
+                    <constraint firstItem="9Ap-DU-s0U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yjt-c8-WmP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelCategories" destination="Ho6-CF-u4h" id="5Ii-nW-SpF"/>
+                <outlet property="labelDuration" destination="wUu-Sc-zma" id="b2c-1n-dYo"/>
+                <outlet property="labelEventType" destination="f9e-go-0eN" id="sI1-Kj-Y5v"/>
+                <outlet property="labelRaceName" destination="cTb-Fa-Fh9" id="yNW-ms-FMP"/>
+                <outlet property="medalImageView" destination="Zj2-dW-Wnc" id="40e-N0-Bxp"/>
+            </connections>
+            <point key="canvasLocation" x="92.753623188405811" y="95.089285714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

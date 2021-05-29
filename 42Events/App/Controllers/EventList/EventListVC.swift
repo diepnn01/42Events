@@ -11,9 +11,16 @@ import SnapKit
 
 class EventListVC: BaseVC {
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    var eventCategory: EventCategoryType = .running
+    //MARK: Outlets
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var filterView: UIView!
+    @IBOutlet weak var medalSwitch: UISwitch!
+    @IBOutlet weak var labelNumberEvents: UILabel!
     
+    //MARK: Properties
+    
+    var eventCategory: EventCategoryType = .running
+    private var viewMedal = false
     private lazy var refreshControl: UIRefreshControl = {
         let control = UIRefreshControl()
         control.tintColor = UIColor.colorFromHex("#EC3E49")
@@ -42,9 +49,10 @@ class EventListVC: BaseVC {
     
     private func setupUI() {
         title = eventCategory.title
-        collectionView.register(UINib(nibName: EventCollectionViewCell.className,
-                                      bundle: nil), forCellWithReuseIdentifier: EventCollectionViewCell.className)
-        collectionView.refreshControl = refreshControl
+        medalSwitch.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+        tableView.register(nibWithCellClass: EventTableViewCell.self)
+        tableView.register(nibWithCellClass: EventMedalTableViewCell.self)
+        tableView.refreshControl = refreshControl
     }
     
     private func getData() {
@@ -54,6 +62,11 @@ class EventListVC: BaseVC {
     @objc private func refreshData() {
         presenter.page = 0
         presenter.filter(sportType: eventCategory)
+    }
+    
+    @IBAction func actionSwitch(_ sender: UISwitch) {
+        viewMedal = !viewMedal
+        tableView.reloadData()
     }
 }
 
@@ -69,7 +82,8 @@ extension EventListVC: EventListView {
     func onFilterCompleted() {
         dismissProgress()
         refreshControl.endRefreshing()
-        collectionView.reloadData()
+        labelNumberEvents.text = "\(presenter.totalEvent) \(eventCategory.title) events".lowercased()
+        tableView.reloadData()
     }
     
     func onError() {
@@ -82,34 +96,32 @@ extension EventListVC: EventListView {
 /*
  * UICollectionViewDataSource and Delegate
  */
-extension EventListVC: UICollectionViewDataSource {
+extension EventListVC: UITableViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfItem(at: section)
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueCell(of: EventCollectionViewCell.self, at: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard !viewMedal else {
+            let cell = tableView.dequeueCell(of: EventMedalTableViewCell.self, at: indexPath)
+            cell.race = presenter.item(at: indexPath)
+            return cell
+        }
+        let cell = tableView.dequeueCell(of: EventTableViewCell.self, at: indexPath)
         cell.race = presenter.item(at: indexPath)
         return cell
     }
 }
 
-extension EventListVC: UICollectionViewDelegateFlowLayout {
+extension EventListVC: UITableViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard !viewMedal else {
+            return UITableView.automaticDimension
+        }
         let imageBGHeight = (UIScreen.main.bounds.width) * 9/16
-        let collectionHeight = imageBGHeight + Metrict.heightCellWithoutImage
-        return CGSize(width: UIScreen.main.bounds.width,
-                      height: collectionHeight)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        let cellHeight = imageBGHeight + Metrict.heightCellWithoutImage
+        return cellHeight//UITableView.automaticDimension
     }
 }
