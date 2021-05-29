@@ -28,10 +28,6 @@ class EventListVC: BaseVC {
         return control
     }()
     
-    struct Metrict {
-        static let heightCellWithoutImage: CGFloat = 110
-    }
-    
     private var presenter: EventListPresenter!
     
     override func viewDidLoad() {
@@ -117,11 +113,6 @@ extension EventListVC: UITableViewDataSource {
 extension EventListVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard !viewMedal else {
-            return UITableView.automaticDimension
-        }
-        let imageBGHeight = (UIScreen.main.bounds.width) * 9/16
-        let cellHeight = imageBGHeight + Metrict.heightCellWithoutImage
-        return cellHeight//UITableView.automaticDimension
+        return UITableView.automaticDimension
     }
 }

@@ -53,8 +53,11 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="iQE-cI-3YI">
-                            <rect key="frame" x="8" y="277" width="398" height="531"/>
+                            <rect key="frame" x="8" y="277" width="398" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="4xm-jl-XJM"/>
+                            </constraints>
                             <collectionViewLayout key="collectionViewLayout" id="QX1-QP-1cv" customClass="UICollectionViewLeftAlignedLayout"/>
                         </collectionView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5E-He-jGz">
@@ -87,7 +90,7 @@
                         <constraint firstAttribute="trailing" secondItem="Obc-rN-hiw" secondAttribute="trailing" constant="8" id="ADr-pk-qTm"/>
                         <constraint firstItem="Obc-rN-hiw" firstAttribute="top" secondItem="RVU-6J-HyK" secondAttribute="bottom" constant="8" id="FbI-nF-uW2"/>
                         <constraint firstItem="RVU-6J-HyK" firstAttribute="top" secondItem="U9p-XL-62Y" secondAttribute="top" constant="5" id="Gbe-BP-FVk"/>
-                        <constraint firstAttribute="bottom" secondItem="iQE-cI-3YI" secondAttribute="bottom" constant="10" id="HDO-V8-jRc"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iQE-cI-3YI" secondAttribute="bottom" constant="10" id="HDO-V8-jRc"/>
                         <constraint firstItem="iQE-cI-3YI" firstAttribute="top" secondItem="E0a-MW-7Wj" secondAttribute="bottom" constant="8" symbolic="YES" id="KoX-mO-Y2a"/>
                         <constraint firstAttribute="trailing" secondItem="U5E-He-jGz" secondAttribute="trailing" constant="20" id="LOQ-EX-qbY"/>
                         <constraint firstItem="E0a-MW-7Wj" firstAttribute="leading" secondItem="Obc-rN-hiw" secondAttribute="leading" id="TPD-Lm-DQK"/>
