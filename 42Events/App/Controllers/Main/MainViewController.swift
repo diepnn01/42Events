@@ -61,9 +61,21 @@ class MainViewController: BaseVC {
 
 extension MainViewController: MainView {
     
-    func getRaceEventsCompleted() {
+    func onShowProgress() {
+        showProgress()
+    }
+    
+    func onGetRaceEventsCompleted() {
+        dismissProgress()
         headerview.reloadData(presenter.raceEventCollection.featured)
+        refreshControl.endRefreshing()
         tableView.reloadData()
+    }
+    
+    func onError() {
+        //TODO: handle error
+        refreshControl.endRefreshing()
+        dismissProgress()
     }
 }
 

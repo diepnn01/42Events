@@ -8,6 +8,7 @@
 import Foundation
 
 protocol EventListView {
-    func filterCompleted()
-    func filterError()
+    func onShowProgress()
+    func onFilterCompleted()
+    func onError()
 }

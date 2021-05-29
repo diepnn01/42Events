@@ -8,5 +8,7 @@
 import Foundation
 
 protocol MainView {
-    func getRaceEventsCompleted()
+    func onShowProgress()
+    func onGetRaceEventsCompleted()
+    func onError()
 }

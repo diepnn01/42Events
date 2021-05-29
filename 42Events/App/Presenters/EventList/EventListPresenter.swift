@@ -34,22 +34,21 @@ class EventListPresenter {
     }
     
     //MARK: Get Data
-    func filter(sportType: EventCategoryType){
-        
+    func filter(sportType: EventCategoryType) {
         guard !isLoading else { return }
         isLoading = true
-        
+        view?.onShowProgress()
         service.filterRaces(sportType: sportType.paramFilter,
                             maxItem: maxItemPerPage,
                             skipCount: page)
             .cloudResponse { [weak self](collection) in
                 self?.datasource = collection.races
                 self?.totalItems = collection.totalData
-                self?.view?.filterCompleted()
+                self?.view?.onFilterCompleted()
                 self?.isLoading = false
             }.cloudError { [weak self](errorMsg, _) in
+                self?.view?.onError()
                 self?.isLoading = false
-                self?.view?.filterError()
             }
     }
 }

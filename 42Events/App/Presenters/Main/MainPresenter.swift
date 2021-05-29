@@ -9,11 +9,16 @@ import Foundation
 
 class MainPresenter {
     
-    var service: MainService!
     var view: MainView?
     
+    //MARK: Private properties
+    private var service: MainService!
+    private var isLoading = false
+    
+    //MARK: Public properties
     var raceEventCollection = RaceCollection(data: nil)
     
+    //MARK: Initialize
     init() {
         service = MainService()
     }
@@ -22,12 +27,22 @@ class MainPresenter {
         self.view = view
     }
     
+    func detachView() {
+        self.view = nil
+    }
+    
+    //MARK: Get data from API
     func getRaceEvents() {
+        guard !isLoading else { return }
+        isLoading = true
+        view?.onShowProgress()
         service.getRaceEvents().cloudResponse { [weak self](collection) in
             self?.raceEventCollection = collection
-            self?.view?.getRaceEventsCompleted()
-        }.cloudError { (errorMsg, _) in
-            print("error")
+            self?.view?.onGetRaceEventsCompleted()
+            self?.isLoading = false
+        }.cloudError { [weak self](errorMsg, _) in
+            self?.view?.onError()
+            self?.isLoading = false
         }
     }
 }

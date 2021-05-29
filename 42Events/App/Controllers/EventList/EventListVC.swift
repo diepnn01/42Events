@@ -62,13 +62,20 @@ class EventListVC: BaseVC {
  */
 extension EventListVC: EventListView {
     
-    func filterCompleted() {
+    func onShowProgress() {
+        showProgress()
+    }
+    
+    func onFilterCompleted() {
+        dismissProgress()
         refreshControl.endRefreshing()
         collectionView.reloadData()
     }
     
-    func filterError() {
+    func onError() {
         //TODO: handle error here
+        refreshControl.endRefreshing()
+        dismissProgress()
     }
 }
 

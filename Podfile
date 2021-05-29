@@ -10,6 +10,7 @@ target '42Events' do
   pod 'RxSwift', '6.2.0'
   pod 'RxCocoa', '6.2.0'
   pod 'UICollectionViewLeftAlignedLayout'
+  pod 'SVProgressHUD'
   
   target '42EventsTests' do
     inherit! :search_paths
