@@ -15,7 +15,7 @@ class EventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var freeMedalEngraving: UIView!
 
-    var listItems = ["Running", "11 Joined", "Half marathon 21.907km", "Half marathon 21.907km", "Half marathon 21.907km"]
+    private var categories = [String]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,8 +26,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         eventImageView.layer.cornerRadius = 1
         labelEventName.textColor = UIColor.colorFromHex("#333333")
         labelDuration.textColor = UIColor.colorFromHex("#333333")
-        labelEventName.text = "[Test] 50 Day Running Challenge - Thailand"
-        labelDuration.text = "01 Jan 2021 (23:59) - 29 Jan 2031 (23:59) GMT +8"
+        
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -35,19 +34,31 @@ class EventCollectionViewCell: UICollectionViewCell {
                                 forCellWithReuseIdentifier: TagCollectionViewCell.className)
     }
 
+    var race: Race? {
+        didSet {
+            guard let race = race else { return }
+            freeMedalEngraving.isHidden = !race.isFreeEngraving
+            let url = URL(string: race.bannerCard ?? "")
+            eventImageView.kf.setImage(with: url, placeholder: UIImage(named: "Default_Banner"))
+            labelEventName.text = race.raceName
+            labelDuration.text = race.racePeriod
+            categories = race.categories
+            collectionView.reloadData()
+        }
+    }
 }
 
 extension EventCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listItems.count
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.className, for: indexPath) as? TagCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.title = listItems[indexPath.row]
+        cell.title = categories[indexPath.row]
         return cell
     }
 }
@@ -55,7 +66,7 @@ extension EventCollectionViewCell: UICollectionViewDataSource {
 extension EventCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let title = listItems[indexPath.row]
+        let title = categories[indexPath.row]
         var widthTitle = title.getWidthString(UIFont.metropolisMedium(ofSize: 12),
                                              mHeight: 50,
                                              maxWidth: UIScreen.main.bounds.width)

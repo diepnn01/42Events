@@ -7,12 +7,29 @@
 
 import UIKit
 
+enum RaceCategory: Int, CaseIterable {
+    case startSoon
+    case popular
+    case newRelease
+    case free
+    case past
+    
+    var title: String? {
+        switch self {
+        case .startSoon: return "Starting Soon"
+        case .popular: return "Popular"
+        case .newRelease: return "New Release"
+        case .free: return "Free"
+        case .past: return "Past Events"
+        }
+    }
+}
+
 class MainViewController: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var sections = ["Starting soon", "Popular", "New Releasees", "Free", "Past Events"]
-    
+    var presenter: MainPresenter!
     lazy var headerview: MainHeaderView = {
         let view = MainHeaderView(shouldSetup: true)
         let screenWidth = UIScreen.main.bounds.width
@@ -21,12 +38,18 @@ class MainViewController: BaseVC {
         return view
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSideMenu()
+        setupPresenter()
         title = "Main.Title".localized
         setupTableView()
+        presenter.getRaceEvents()
+    }
+    
+    private func setupPresenter() {
+        presenter = MainPresenter()
+        presenter.attachView(view: self)
     }
     
     private func setupTableView() {
@@ -42,6 +65,14 @@ class MainViewController: BaseVC {
     }
 }
 
+extension MainViewController: MainView {
+    
+    func getRaceEventsCompleted() {
+        headerview.reloadData(presenter.raceEventCollection.featured)
+        tableView.reloadData()
+    }
+}
+
 extension MainViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,7 +80,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : sections.count
+        return section == 0 ? 1 : RaceCategory.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,8 +94,22 @@ extension MainViewController: UITableViewDataSource {
             }
             return cell
         }
+        
         let cell = tableView.dequeueCell(of: EventCell.self, at: indexPath)
-        cell.title = sections[indexPath.row]
+        cell.title = RaceCategory.allCases[indexPath.row].title
+        let raceType = RaceCategory(rawValue: indexPath.row) ?? .startSoon
+        switch raceType {
+        case .startSoon:
+            cell.reloadData(presenter.raceEventCollection.startingSoon)
+        case .popular:
+            cell.reloadData(presenter.raceEventCollection.popular)
+        case .newRelease:
+            cell.reloadData(presenter.raceEventCollection.newRelease)
+        case .free:
+            cell.reloadData(presenter.raceEventCollection.newRelease)
+        case .past:
+            cell.reloadData(presenter.raceEventCollection.past)
+        }
         return cell
     }
 }

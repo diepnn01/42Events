@@ -47,6 +47,8 @@ class EventCell: UITableViewCell, BaseViewType {
         static let heightCellWithoutImage: CGFloat = 110
     }
     
+    private var datasources = [Race]()
+    
     var title: String? {
         didSet {
             labelTitle.text = title
@@ -83,6 +85,11 @@ class EventCell: UITableViewCell, BaseViewType {
     
     func bind() { }
     
+    func reloadData(_ races: [Race]) {
+        datasources = races
+        collectionView.reloadData()
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()
@@ -92,7 +99,7 @@ class EventCell: UITableViewCell, BaseViewType {
 extension EventCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return datasources.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -101,6 +108,7 @@ extension EventCell: UICollectionViewDataSource {
                                                             for: indexPath) as? EventCollectionViewCell else {
             return UICollectionViewCell()
         }
+        cell.race = datasources[indexPath.row]
         return cell
     }
 }

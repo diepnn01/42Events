@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		46376C8C0C5BF0CD4C7D4410 /* Pods_42Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D137343DBEE5927D26B579 /* Pods_42Events.framework */; };
+		5F15AFCA266147EA00398C6C /* RaceCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15AFC9266147EA00398C6C /* RaceCollection.swift */; };
+		5F15AFD02661498900398C6C /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15AFCF2661498900398C6C /* MainService.swift */; };
 		5F8E9E6D265D4EA8006AC0CE /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E6C265D4EA8006AC0CE /* BaseVC.swift */; };
 		5F8E9E7C265D5383006AC0CE /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E75265D5383006AC0CE /* ViewType.swift */; };
 		5F8E9E7E265D5383006AC0CE /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9E77265D5383006AC0CE /* Layoutable.swift */; };
@@ -35,6 +37,18 @@
 		5F8E9EB7265FF3A6006AC0CE /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F8E9EB5265FF3A6006AC0CE /* TagCollectionViewCell.xib */; };
 		5F8E9EBA265FFD60006AC0CE /* EventListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EB9265FFD60006AC0CE /* EventListVC.swift */; };
 		5F8E9EBC265FFE87006AC0CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EBB265FFE87006AC0CE /* Utils.swift */; };
+		5F8E9EBE26613640006AC0CE /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EBD26613640006AC0CE /* SplashVC.swift */; };
+		5F8E9EC526613739006AC0CE /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EC126613739006AC0CE /* Route.swift */; };
+		5F8E9EC626613739006AC0CE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EC226613739006AC0CE /* Router.swift */; };
+		5F8E9EC726613739006AC0CE /* RouterUrlConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EC326613739006AC0CE /* RouterUrlConvertible.swift */; };
+		5F8E9ECA26613D23006AC0CE /* RaceEventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EC926613D23006AC0CE /* RaceEventsRouter.swift */; };
+		5F8E9ECC26613D76006AC0CE /* RaceFilterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9ECB26613D76006AC0CE /* RaceFilterRouter.swift */; };
+		5F8E9ECE26614281006AC0CE /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9ECD26614281006AC0CE /* Race.swift */; };
+		5F8E9EE0266142FD006AC0CE /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EDB266142FD006AC0CE /* ServiceRequest.swift */; };
+		5F8E9EE1266142FD006AC0CE /* RequestParameterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EDC266142FD006AC0CE /* RequestParameterObject.swift */; };
+		5F8E9EE2266142FD006AC0CE /* CoreObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EDD266142FD006AC0CE /* CoreObject.swift */; };
+		5F8E9EE3266142FD006AC0CE /* ServerResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EDE266142FD006AC0CE /* ServerResponseObject.swift */; };
+		5F8E9EE4266142FD006AC0CE /* ServerResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9EDF266142FD006AC0CE /* ServerResponseStatus.swift */; };
 		5FD2C511265D4B4C00D350CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C510265D4B4C00D350CF /* AppDelegate.swift */; };
 		5FD2C515265D4B4C00D350CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C514265D4B4C00D350CF /* MainViewController.swift */; };
 		5FD2C518265D4B4C00D350CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C516265D4B4C00D350CF /* Main.storyboard */; };
@@ -44,7 +58,6 @@
 		5FD2C533265D4B4F00D350CF /* EventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C532265D4B4F00D350CF /* EventsUITests.swift */; };
 		6712396DDFB7AEC192437EE4 /* Pods_42Events_42EventsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB90FA1BD1489BD032000B2 /* Pods_42Events_42EventsUITests.framework */; };
 		EE6AF0D1AE781C0F58E47228 /* Pods_42EventsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6A5914980009D60CBDAA94 /* Pods_42EventsTests.framework */; };
-		F38941E22660E73F00DC41EC /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38941E12660E73F00DC41EC /* SplashVC.swift */; };
 		F38941EB2660E76300DC41EC /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38941EA2660E76300DC41EC /* MainPresenter.swift */; };
 		F38941F42660E77B00DC41EC /* EventListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38941F32660E77B00DC41EC /* EventListPresenter.swift */; };
 		F38942012660E7F700DC41EC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38942002660E7F700DC41EC /* MainView.swift */; };
@@ -75,6 +88,8 @@
 		17F187307B13DA279E460AE0 /* Pods-42EventsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42EventsTests.release.xcconfig"; path = "Target Support Files/Pods-42EventsTests/Pods-42EventsTests.release.xcconfig"; sourceTree = "<group>"; };
 		42ED103B3F51C2E1EBDA63CB /* Pods-42Events-42EventsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Events-42EventsUITests.debug.xcconfig"; path = "Target Support Files/Pods-42Events-42EventsUITests/Pods-42Events-42EventsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E40BF92FFEEA5167AAFB348 /* Pods-42Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Events.debug.xcconfig"; path = "Target Support Files/Pods-42Events/Pods-42Events.debug.xcconfig"; sourceTree = "<group>"; };
+		5F15AFC9266147EA00398C6C /* RaceCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCollection.swift; sourceTree = "<group>"; };
+		5F15AFCF2661498900398C6C /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		5F8E9E6C265D4EA8006AC0CE /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		5F8E9E75265D5383006AC0CE /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		5F8E9E77265D5383006AC0CE /* Layoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layoutable.swift; sourceTree = "<group>"; };
@@ -102,6 +117,18 @@
 		5F8E9EB5265FF3A6006AC0CE /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		5F8E9EB9265FFD60006AC0CE /* EventListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListVC.swift; sourceTree = "<group>"; };
 		5F8E9EBB265FFE87006AC0CE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5F8E9EBD26613640006AC0CE /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		5F8E9EC126613739006AC0CE /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		5F8E9EC226613739006AC0CE /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		5F8E9EC326613739006AC0CE /* RouterUrlConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterUrlConvertible.swift; sourceTree = "<group>"; };
+		5F8E9EC926613D23006AC0CE /* RaceEventsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceEventsRouter.swift; sourceTree = "<group>"; };
+		5F8E9ECB26613D76006AC0CE /* RaceFilterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceFilterRouter.swift; sourceTree = "<group>"; };
+		5F8E9ECD26614281006AC0CE /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		5F8E9EDB266142FD006AC0CE /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		5F8E9EDC266142FD006AC0CE /* RequestParameterObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestParameterObject.swift; sourceTree = "<group>"; };
+		5F8E9EDD266142FD006AC0CE /* CoreObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreObject.swift; sourceTree = "<group>"; };
+		5F8E9EDE266142FD006AC0CE /* ServerResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponseObject.swift; sourceTree = "<group>"; };
+		5F8E9EDF266142FD006AC0CE /* ServerResponseStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponseStatus.swift; sourceTree = "<group>"; };
 		5FD2C50D265D4B4C00D350CF /* 42Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 42Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD2C510265D4B4C00D350CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FD2C514265D4B4C00D350CF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +147,6 @@
 		74D137343DBEE5927D26B579 /* Pods_42Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_42Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6A5914980009D60CBDAA94 /* Pods_42EventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_42EventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB90FA1BD1489BD032000B2 /* Pods_42Events_42EventsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_42Events_42EventsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F38941E12660E73F00DC41EC /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashVC.swift; path = ../../../../../../../../../Users/diep.nguyen/Documents/SplashVC.swift; sourceTree = "<group>"; };
 		F38941EA2660E76300DC41EC /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		F38941F32660E77B00DC41EC /* EventListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListPresenter.swift; sourceTree = "<group>"; };
 		F38942002660E7F700DC41EC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -157,6 +183,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F15AFCE2661497900398C6C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5F15AFCF2661498900398C6C /* MainService.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		5F8E9E67265D4E4A006AC0CE /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +213,9 @@
 		5F8E9E69265D4E75006AC0CE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5F8E9EDA266142FD006AC0CE /* Common */,
+				5F8E9ECD26614281006AC0CE /* Race.swift */,
+				5F15AFC9266147EA00398C6C /* RaceCollection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,7 +223,7 @@
 		5F8E9E6A265D4E7A006AC0CE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5F8E9E6B265D4E81006AC0CE /* Routing */,
+				5F15AFCE2661497900398C6C /* Main */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -194,6 +231,10 @@
 		5F8E9E6B265D4E81006AC0CE /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				5F8E9EC826613D05006AC0CE /* Router */,
+				5F8E9EC126613739006AC0CE /* Route.swift */,
+				5F8E9EC226613739006AC0CE /* Router.swift */,
+				5F8E9EC326613739006AC0CE /* RouterUrlConvertible.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -287,7 +328,7 @@
 		5F8E9E87265D5876006AC0CE /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				F38941E12660E73F00DC41EC /* SplashVC.swift */,
+				5F8E9EBD26613640006AC0CE /* SplashVC.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -333,6 +374,27 @@
 			path = EventList;
 			sourceTree = "<group>";
 		};
+		5F8E9EC826613D05006AC0CE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5F8E9EC926613D23006AC0CE /* RaceEventsRouter.swift */,
+				5F8E9ECB26613D76006AC0CE /* RaceFilterRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		5F8E9EDA266142FD006AC0CE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5F8E9EDB266142FD006AC0CE /* ServiceRequest.swift */,
+				5F8E9EDC266142FD006AC0CE /* RequestParameterObject.swift */,
+				5F8E9EDD266142FD006AC0CE /* CoreObject.swift */,
+				5F8E9EDE266142FD006AC0CE /* ServerResponseObject.swift */,
+				5F8E9EDF266142FD006AC0CE /* ServerResponseStatus.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		5FD2C504265D4B4C00D350CF = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +422,7 @@
 			children = (
 				5F8E9E67265D4E4A006AC0CE /* Main */,
 				5F8E9E6A265D4E7A006AC0CE /* Services */,
+				5F8E9E6B265D4E81006AC0CE /* Routing */,
 				5F8E9E69265D4E75006AC0CE /* Models */,
 				5F8E9E68265D4E54006AC0CE /* App */,
 				5F8E9E6F265D4F04006AC0CE /* Utils */,
@@ -737,31 +800,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F8E9EE0266142FD006AC0CE /* ServiceRequest.swift in Sources */,
 				5F8E9E92265EA39B006AC0CE /* UITableView+Ext.swift in Sources */,
 				5F8E9E99265EABC4006AC0CE /* UIColor+Ext.swift in Sources */,
+				5F8E9EE2266142FD006AC0CE /* CoreObject.swift in Sources */,
 				5F8E9E85265D5718006AC0CE /* MainHeaderView.swift in Sources */,
+				5F8E9EC526613739006AC0CE /* Route.swift in Sources */,
 				5F8E9E90265E9FE2006AC0CE /* NSObject+Ext.swift in Sources */,
+				5F8E9EC626613739006AC0CE /* Router.swift in Sources */,
+				5F8E9EC726613739006AC0CE /* RouterUrlConvertible.swift in Sources */,
 				5F8E9E8A265E970C006AC0CE /* HeaderCarouselCell.swift in Sources */,
-				F38941E22660E73F00DC41EC /* SplashVC.swift in Sources */,
 				5F8E9EA7265FE453006AC0CE /* EventCell.swift in Sources */,
+				5F8E9ECC26613D76006AC0CE /* RaceFilterRouter.swift in Sources */,
 				F38942252660EC7B00DC41EC /* SideMenuCell.swift in Sources */,
 				5FD2C515265D4B4C00D350CF /* MainViewController.swift in Sources */,
 				5F8E9E80265D5383006AC0CE /* Bindable.swift in Sources */,
 				5F8E9E6D265D4EA8006AC0CE /* BaseVC.swift in Sources */,
 				5F8E9E7C265D5383006AC0CE /* ViewType.swift in Sources */,
 				5F8E9E7E265D5383006AC0CE /* Layoutable.swift in Sources */,
+				5F8E9ECA26613D23006AC0CE /* RaceEventsRouter.swift in Sources */,
+				5F8E9EBE26613640006AC0CE /* SplashVC.swift in Sources */,
 				5F8E9E82265D5383006AC0CE /* DisposeBagHaving.swift in Sources */,
 				F38942012660E7F700DC41EC /* MainView.swift in Sources */,
 				5F8E9EB6265FF3A6006AC0CE /* TagCollectionViewCell.swift in Sources */,
 				F389421C2660E91100DC41EC /* SideMenuView.swift in Sources */,
 				5F8E9E95265EA40C006AC0CE /* EventCategoryCell.swift in Sources */,
+				5F8E9EE1266142FD006AC0CE /* RequestParameterObject.swift in Sources */,
+				5F8E9EE4266142FD006AC0CE /* ServerResponseStatus.swift in Sources */,
+				5F8E9EE3266142FD006AC0CE /* ServerResponseObject.swift in Sources */,
 				5F8E9EAA265FE488006AC0CE /* EventCollectionViewCell.swift in Sources */,
+				5F15AFD02661498900398C6C /* MainService.swift in Sources */,
 				5F8E9EA5265F0C9E006AC0CE /* UIFont+Ext.swift in Sources */,
+				5F15AFCA266147EA00398C6C /* RaceCollection.swift in Sources */,
 				F38941F42660E77B00DC41EC /* EventListPresenter.swift in Sources */,
 				5F8E9E9B265EABF1006AC0CE /* String+Ext.swift in Sources */,
 				F38941EB2660E76300DC41EC /* MainPresenter.swift in Sources */,
 				F38942132660E80300DC41EC /* EventListView.swift in Sources */,
 				5F8E9EBC265FFE87006AC0CE /* Utils.swift in Sources */,
+				5F8E9ECE26614281006AC0CE /* Race.swift in Sources */,
 				5F8E9E97265EA560006AC0CE /* EventCategoryCollectionCell.swift in Sources */,
 				5FD2C511265D4B4C00D350CF /* AppDelegate.swift in Sources */,
 				5F8E9EBA265FFD60006AC0CE /* EventListVC.swift in Sources */,

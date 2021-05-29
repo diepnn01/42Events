@@ -16,6 +16,7 @@ class HeaderCarouselCell: UICollectionViewCell, BaseViewType {
     
     lazy var imvBG: UIImageView = {
         let imv = UIImageView()
+        imv.backgroundColor = .white
         return imv
     }()
     
@@ -29,6 +30,7 @@ class HeaderCarouselCell: UICollectionViewCell, BaseViewType {
     }
     
     func layout() {
+        backgroundColor = .white
         [imvBG].forEach(contentView.addSubview)
         imvBG.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -41,7 +43,7 @@ class HeaderCarouselCell: UICollectionViewCell, BaseViewType {
         didSet {
             guard let imageUrl = imageUrl else { return }
             let url = URL(string: imageUrl)
-            imvBG.kf.setImage(with: url)
+            imvBG.kf.setImage(with: url, placeholder: UIImage(named: "Default_Banner"))
         }
     }
     

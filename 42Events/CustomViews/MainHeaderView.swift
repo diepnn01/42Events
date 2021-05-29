@@ -12,9 +12,9 @@ import SnapKit
 class MainHeaderView: UIView, BaseViewType {
     
     var disposeBag = DisposeBag()
-    var currentPage: Int = 0
-    var timer: Timer?
-    var banners = ["https://images.weserv.nl/?url=https://virtual-race-submissions.s3-ap-southeast-1.amazonaws.com/images/Web-Banner-B-jpg-6cd04092020-72239&w=560&h=560&fit=outside", "https://images.weserv.nl/?url=https://virtual-race-submissions.s3-ap-southeast-1.amazonaws.com/images/-test-50day-running-challenge-thai-banner-top-of-webpage-jpg-21u09122020-33924&w=560&h=560&fit=outside", "https://images.weserv.nl/?url=https://virtual-race-submissions.s3-ap-southeast-1.amazonaws.com/images/Web-Banner-B-3-jpg-k4b02102020-80717&w=560&h=560&fit=outside", "https://images.weserv.nl/?url=https://virtual-race-submissions.s3-ap-southeast-1.amazonaws.com/images/Web-Banner-B-3-jpg-k4b02102020-80717&w=560&h=560&fit=outside"]
+    private var currentPage: Int = 0
+    private var timer: Timer?
+    private var banners = [String]()
     
     lazy private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -30,7 +30,7 @@ class MainHeaderView: UIView, BaseViewType {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
-        
+        collectionView.backgroundColor = .white
         return collectionView
     }()
     
@@ -39,7 +39,6 @@ class MainHeaderView: UIView, BaseViewType {
         pageControl.currentPage = 0
         pageControl.pageIndicatorTintColor = UIColor.white
         pageControl.currentPageIndicatorTintColor = UIColor.red
-        pageControl.numberOfPages = banners.count
         return pageControl
     }()
     
@@ -53,11 +52,6 @@ class MainHeaderView: UIView, BaseViewType {
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-10)
         }
-        
-        timer = .scheduledTimer(timeInterval: 3, target: self,
-                                selector: #selector(scrollToNextPage),
-                                userInfo: nil,
-                                repeats: true)
     }
     
     func bind() { }
@@ -69,6 +63,23 @@ class MainHeaderView: UIView, BaseViewType {
         }
         pageControl.currentPage = currentPage
         collectionView.scrollToItem(at: IndexPath(item: currentPage, section: 0), at: .centeredHorizontally, animated: true)
+    }
+    
+    private func resetTimer() {
+        timer = .scheduledTimer(timeInterval: 3, target: self,
+                                selector: #selector(scrollToNextPage),
+                                userInfo: nil,
+                                repeats: true)
+    }
+    
+    func reloadData(_ featuredRaces: [Race]) {
+        timer?.invalidate()
+        banners = featuredRaces.map({ $0.bannerCard }).compactMap({ $0 })
+        pageControl.numberOfPages = banners.count
+        pageControl.isHidden = banners.count <= 1
+        currentPage = 0
+        collectionView.reloadData()
+        resetTimer()
     }
 }
 
